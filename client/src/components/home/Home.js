@@ -1,8 +1,15 @@
 import React, {useContext} from 'react';
+import Instruments from './Instruments';
+import Hero from './Hero';
 
 const Home = () => {
 
-  return <div>Hello Home</div>
+  return (
+    <>
+      <Hero />
+      <Instruments />
+    </>
+  )
 }
 
 export default Home

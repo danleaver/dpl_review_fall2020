@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Navbar = (props) => {
   const authContext = useContext(AuthContext)
@@ -12,8 +13,10 @@ const Navbar = (props) => {
   if (authContext.authenticated) { 
     return (  
       <>
-        <Link to="/">Home</Link>
-        <button onClick={handleClick}>Logout</button>
+        <Flex>
+          <Link to="/">Home</Link>
+          <div onClick={handleClick}>Logout</div>
+        </Flex>
       </>
     )
   } else {
@@ -28,3 +31,7 @@ const Navbar = (props) => {
 } 
 
 export default withRouter(Navbar)
+
+const Flex = styled.div`
+  display: flex;
+`
